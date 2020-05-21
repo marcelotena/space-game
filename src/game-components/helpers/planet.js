@@ -42,6 +42,7 @@ export const generatePlanetType = (arraystart, arrayend) => {
   return planetTypes[index];
 };
 
+// Refactor to Player position, planets will be generated in order, to fill all universe.
 export const generatePlanetPosition = (position) => {
   const galaxy = getRndInteger(1, 6);      // 1 - 5
   const system = getRndInteger(1, 500);    // 1 - 499

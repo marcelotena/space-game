@@ -11,9 +11,7 @@ const System = () => {
   }
 
   return (
-      <div>
-        <h3>System</h3>
-
+      <div className="system-list-container">
         <ul className="system-list">
           <li className="system-list-header">
             <div className="planet-position-header">Planet</div>
