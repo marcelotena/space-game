@@ -1,0 +1,38 @@
+.system-list {
+    float: left;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 40px;
+}
+
+.system-list-item {
+    float: left;
+    width: 100%;
+}
+
+.planet-position-header,
+.planet-name-header,
+.planet-owner-header,
+.planet-alliance-header {
+    float: left;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.planet-position-header {
+    width: 80px;
+    text-align: center;
+}
+
+.planet-name-header {
+    width: calc(35% - 60px);
+}
+
+.planet-owner-header {
+    width: calc(35% - 50px);
+}
+
+.planet-alliance-header {
+    width: calc(30% - 50px);
+}

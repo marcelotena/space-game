@@ -1,10 +1,10 @@
 import React from 'react';
-import Planet from "../game-components/Planet";
+import Galaxy from "../game-components/Galaxy";
 
 const Content = () => {
   return (
       <div className="App-content">
-        <Planet />
+        <Galaxy />
       </div>
   );
 };

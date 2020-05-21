@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import {v4 as uuid} from 'uuid';
-import { generatePlanetType, generatePlanetPosition, generatePlanetImage } from './constants/planetTypes';
+import React from 'react';
+import './Planet.css';
 
-const Planet = () => {
-  const [planet, setPlanet] = useState({
+const Planet = ({ planet }) => {
+
+  const { name, type, position, imageSystem } = planet;
+  /* PLANET PROPERTIES
+  const planet = {
     id: '',          // generated - String
     name: '',        // set by user - String
     type: {
@@ -18,54 +20,15 @@ const Planet = () => {
       position: 0 // 1 - 15 - Number
     },
     imageSystem: '' // 01 - 10 - String
-  });
-
-  const generatePlanet = (position) => {
-    switch(position) {
-      case 1:
-      case 2:
-      case 3:
-        return {
-          id: uuid(),
-          name: 'Unnamed planet',
-          type: generatePlanetType(0, 1),
-          usedSlots: 0,
-          slots: 50,
-          position: generatePlanetPosition(position),
-          imageSystem: generatePlanetImage()
-        };
-      default:
-        return {
-          id: uuid(),
-          name: 'Unnamed planet',
-          type: generatePlanetType(0, 15),
-          usedSlots: 0,
-          slots: 50,
-          position: generatePlanetPosition(position),
-          imageSystem: generatePlanetImage()
-        };
-    }
-  };
-
-  const planets = [];
-  for(let i=0; i<12; i++ ) {
-    planets[i] = generatePlanet(1);
-  }
+  };*/
 
   return (
-      <div>
-        <ul>
-          {planets.map(planet =>
-            <li style={{ float: 'left', listStyle: 'none', padding: 0, margin: '15px', width: '29%' }}>
-              <div><img src={`/planet/system/${planet.position.position}/${planet.imageSystem}${planet.type.code}.jpg`} alt=""/></div>
-              <div>ID: {planet.id}</div>
-              <div>Name: {planet.name}</div>
-              <div>Type: {planet.type.code} | {planet.type.name}</div>
-              <div>Slots: {planet.usedSlots} / {planet.slots}</div>
-              <div>Position: [{planet.position.galaxy}:{planet.position.system}:{planet.position.position}]</div>
-            </li>
-          )}
-        </ul>
+      <div className="planet-row">
+        <div className="planet-position">{position.position}</div>
+        <div className="planet-image"><img src={`/planet/system/${position.position}/${imageSystem}${type.code}.jpg`} alt={type.name} /></div>
+        <div className="planet-name">{name}</div>
+        <div className="planet-owner">[{position.galaxy}:{position.system}:{position.position}]</div>
+        <div className="planet-alliance">Alliance name</div>
       </div>
   );
 };

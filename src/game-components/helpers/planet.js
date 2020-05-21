@@ -1,6 +1,7 @@
 import { getRndInteger } from "../utils/math";
+import { v4 as uuid } from "uuid";
 
-export const planetTypes = [
+const planetTypes = [
   {
     code: 'a',
     name: 'desert'
@@ -48,4 +49,31 @@ export const generatePlanetPosition = (position) => {
 export const generatePlanetImage = () => {
   let number = getRndInteger(1, 6); // 1 - 5
   return '0' + number;
+};
+
+export const generatePlanet = (position) => {
+  switch(position) {
+    case 1:
+    case 2:
+    case 3:
+      return {
+        id: uuid(),
+        name: 'Unnamed planet',
+        type: generatePlanetType(0, 1),
+        usedSlots: 0,
+        slots: 50,
+        position: generatePlanetPosition(position),
+        imageSystem: generatePlanetImage()
+      };
+    default:
+      return {
+        id: uuid(),
+        name: 'Unnamed planet',
+        type: generatePlanetType(0, 15),
+        usedSlots: 0,
+        slots: 50,
+        position: generatePlanetPosition(position),
+        imageSystem: generatePlanetImage()
+      };
+  }
 };
