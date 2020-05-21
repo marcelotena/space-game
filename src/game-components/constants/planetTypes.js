@@ -32,15 +32,20 @@ export const planetTypes = [
 ];
 
 export const generatePlanetType = (arraystart, arrayend) => {
-  const index = getRndInteger(arraystart, arrayend);
+  const index = getRndInteger(arraystart, arrayend + 1);
 
   return planetTypes[index];
 };
 
-export const generatePlanetPosition = () => {
-  const galaxy = getRndInteger(1, 5);
-  const system = getRndInteger(1, 499);
-  const position = getRndInteger(1, 3);
+export const generatePlanetPosition = (position) => {
+  const galaxy = getRndInteger(1, 6);      // 1 - 5
+  const system = getRndInteger(1, 500);    // 1 - 499
+  //const position = getRndInteger(1, 16); // 1 - 15
 
   return { galaxy, system, position };
+};
+
+export const generatePlanetImage = () => {
+  let number = getRndInteger(1, 6); // 1 - 5
+  return '0' + number;
 };
