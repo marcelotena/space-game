@@ -26,7 +26,7 @@ const Planet = ({ planet }) => {
       <div className="planet-row">
         <div className="planet-position">{position.position}</div>
         <div className="planet-image"><img src={`/planet/system/${position.position}/${imageSystem}${type.code}.jpg`} alt={type.name} /></div>
-        <div className="planet-name">{name}</div>
+        <div className="planet-name">[ {type.name} ]</div>
         <div className="planet-owner">[{position.galaxy}:{position.system}:{position.position}]</div>
         <div className="planet-alliance">Alliance name</div>
       </div>

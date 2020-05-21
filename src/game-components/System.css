@@ -14,10 +14,12 @@
 .planet-name-header,
 .planet-owner-header,
 .planet-alliance-header {
+    font-family: 'Economica', 'Roboto', sans-serif;
     float: left;
     padding: 10px;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 1.4rem;
 }
 
 .planet-position-header {

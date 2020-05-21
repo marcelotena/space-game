@@ -6,8 +6,8 @@ import Planet from "./Planet";
 const System = () => {
 
   const planets = [];
-  for(let i=0; i<12; i++ ) {
-    planets[i] = generatePlanet(1);
+  for(let i=1; i<=15; i++ ) {
+    planets[i] = generatePlanet(i);
   }
 
   return (
@@ -22,8 +22,8 @@ const System = () => {
             <div className="planet-alliance-header">Alliance</div>
           </li>
           {planets.map(planet =>
-              <li className="system-list-item">
-                <Planet key={planet.id} planet={planet} />
+              <li className="system-list-item" key={planet.id}>
+                <Planet planet={planet} />
               </li>
           )}
         </ul>

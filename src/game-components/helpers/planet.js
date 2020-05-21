@@ -30,6 +30,10 @@ const planetTypes = [
     code: 'g',
     name: 'gas'
   },
+  {
+    code: 'c',
+    name: 'normal'
+  },
 ];
 
 export const generatePlanetType = (arraystart, arrayend) => {
@@ -65,11 +69,77 @@ export const generatePlanet = (position) => {
         position: generatePlanetPosition(position),
         imageSystem: generatePlanetImage()
       };
+    case 4:
+    case 5:
+      return {
+        id: uuid(),
+        name: 'Unnamed planet',
+        type: generatePlanetType(1, 2),
+        usedSlots: 0,
+        slots: 50,
+        position: generatePlanetPosition(position),
+        imageSystem: generatePlanetImage()
+      };
+    case 6:
+    case 7:
+      return {
+        id: uuid(),
+        name: 'Unnamed planet',
+        type: generatePlanetType(2, 3),
+        usedSlots: 0,
+        slots: 50,
+        position: generatePlanetPosition(position),
+        imageSystem: generatePlanetImage()
+      };
+    case 8:
+    case 9:
+      return {
+        id: uuid(),
+        name: 'Unnamed planet',
+        type: generatePlanetType(3, 4),
+        usedSlots: 0,
+        slots: 50,
+        position: generatePlanetPosition(position),
+        imageSystem: generatePlanetImage()
+      };
+    case 10:
+    case 11:
+      return {
+        id: uuid(),
+        name: 'Unnamed planet',
+        type: generatePlanetType(4, 5),
+        usedSlots: 0,
+        slots: 50,
+        position: generatePlanetPosition(position),
+        imageSystem: generatePlanetImage()
+      };
+    case 12:
+    case 13:
+      return {
+        id: uuid(),
+        name: 'Unnamed planet',
+        type: generatePlanetType(5, 6),
+        usedSlots: 0,
+        slots: 50,
+        position: generatePlanetPosition(position),
+        imageSystem: generatePlanetImage()
+      };
+    case 14:
+    case 15:
+      return {
+        id: uuid(),
+        name: 'Unnamed planet',
+        type: generatePlanetType(6, 7),
+        usedSlots: 0,
+        slots: 50,
+        position: generatePlanetPosition(position),
+        imageSystem: generatePlanetImage()
+      };
     default:
       return {
         id: uuid(),
         name: 'Unnamed planet',
-        type: generatePlanetType(0, 15),
+        type: generatePlanetType(0, 7),
         usedSlots: 0,
         slots: 50,
         position: generatePlanetPosition(position),
