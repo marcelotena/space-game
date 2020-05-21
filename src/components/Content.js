@@ -1,9 +1,10 @@
 import React from 'react';
+import Planet from "../game-components/Planet";
 
 const Content = () => {
   return (
       <div className="App-content">
-        Content
+        <Planet />
       </div>
   );
 };
