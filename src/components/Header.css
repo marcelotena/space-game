@@ -7,9 +7,10 @@
     width: 200px;
 }
 
-.logo-text {
+h1.logo-text {
     font-size: 2.7rem;
     line-height: 1;
+    margin-top: 30px;
 }
 
 .reserved-container {

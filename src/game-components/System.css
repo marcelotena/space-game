@@ -3,7 +3,7 @@
     width: 100%;
     padding: 5px;
     margin-top: 30px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 8px;
     margin-bottom: 40px;
 }
@@ -21,6 +21,12 @@
     width: 100%;
 }
 
+.system-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .planet-position-header,
 .planet-name-header,
 .planet-owner-header,
@@ -34,18 +40,18 @@
 }
 
 .planet-position-header {
-    width: 80px;
+    width: 50px;
     text-align: center;
 }
 
 .planet-name-header {
-    width: calc(35% - 60px);
+    width: calc(45% - 70px);
 }
 
 .planet-owner-header {
-    width: calc(35% - 50px);
+    width: calc(30% - 20px);
 }
 
 .planet-alliance-header {
-    width: calc(30% - 50px);
+    width: calc(35% - 40px);
 }
