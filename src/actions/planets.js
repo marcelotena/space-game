@@ -7,7 +7,7 @@ import { DASHBOARD_API } from "../utils/constants";
 import setAuthToken from "../utils/setAuthToken";
 import { loadUser } from "./auth";
 
-export const getPlanets = () => async dispatch => {
+export const getPlanets = (galaxy, system) => async dispatch => {
   if(localStorage.token) {
     setAuthToken(localStorage.token);
   } else {
@@ -16,7 +16,7 @@ export const getPlanets = () => async dispatch => {
   }
 
   try {
-    const res = await axios.get(`${DASHBOARD_API}/api/v1/planets`);
+    const res = await axios.get(`${DASHBOARD_API}/api/v1/planets?coordinates.galaxy=${galaxy}&coordinates.system=${system}&sort=coordinates.position`);
 
     dispatch({
       type: GET_PLANETS,
