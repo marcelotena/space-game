@@ -42,15 +42,6 @@ export const generatePlanetType = (arraystart, arrayend) => {
   return planetTypes[index];
 };
 
-// Refactor to Player position, planets will be generated in order, to fill all universe.
-export const generatePlanetPosition = (position) => {
-  const galaxy = getRndInteger(1, 6);      // 1 - 5
-  const system = getRndInteger(1, 500);    // 1 - 499
-  //const position = getRndInteger(1, 16); // 1 - 15
-
-  return { galaxy, system, position };
-};
-
 export const generatePlanetImage = () => {
   let number = getRndInteger(1, 6); // 1 - 5
   return '0' + number;
@@ -147,4 +138,13 @@ export const generatePlanet = (position) => {
         imageSystem: generatePlanetImage()
       };
   }
+};
+
+// Refactor to Player position, planets will be generated in order, to fill all universe.
+export const generatePlanetPosition = (position) => {
+  const galaxy = getRndInteger(1, 6);      // 1 - 5
+  const system = getRndInteger(1, 500);    // 1 - 499
+  //const position = getRndInteger(1, 16); // 1 - 15
+
+  return { galaxy, system, position };
 };

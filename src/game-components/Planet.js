@@ -11,15 +11,15 @@ const Planet = ({ planet }) => {
     type: {
       code: '',     // a, b, c, d, e, f, g - String
       name: ''      // desert, dry, normal, jungle, oceanic, ice, gas - String
+      usedSlots: 0,
+      slots: 0,       // 50 - 320 - Number
+      imageSystem: '' // 01 - 10 - String
     },
-    usedSlots: 0,
-    slots: 0,       // 50 - 320 - Number
-    position: {
+    coordinates: {
       galaxy: 0,  // 1 - 5 - Number
       system: 0,  // 1 - 499 - Number
       position: 0 // 1 - 15 - Number
-    },
-    imageSystem: '' // 01 - 10 - String
+    }
   };*/
 
   return (
