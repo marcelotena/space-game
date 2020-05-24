@@ -51,14 +51,14 @@ export const register = ({ name, email, password }) => async dispatch => {
       payload: res.data
     });
 
-    dispatch(setAlert(`User ${name} registered`, 'success'))
+    //dispatch(setAlert(`User ${name} registered`, 'success'))
 
     dispatch(loadUser());
   } catch (err) {
     const errors = err.response.data.error.split(',');
 
     if (errors) {
-      errors.map(error => dispatch(setAlert(error, 'error')));
+      errors.map(error => dispatch(console.log(error)));
     }
 
     dispatch({
@@ -91,7 +91,7 @@ export const login = (email, password) => async dispatch => {
     const errors = err.response.data.error.split(',');
 
     if (errors) {
-      errors.map(error => dispatch(setAlert(error, 'error')));
+      errors.map(error => dispatch(console.log(error)));
     }
 
     dispatch({

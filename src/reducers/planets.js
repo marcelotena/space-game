@@ -5,6 +5,10 @@ import {
 
 const initialState = {
   planets: [],
+  navigation: {
+    galaxy: 1,
+    system: 1
+  },
   loading: true,
 };
 
@@ -16,13 +20,21 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        planets: payload
+        planets: payload[0],
+        navigation: {
+          galaxy: payload[1],
+          system: payload[2]
+        }
       };
     case PLANETS_ERROR:
       return {
         ...state,
         loading: false,
-        planets: []
+        planets: [],
+        navigation: {
+          galaxy: 1,
+          system: 1
+        }
       };
     default:
       return state;

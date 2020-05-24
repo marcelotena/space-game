@@ -16,11 +16,11 @@ export const getPlanets = (galaxy, system) => async dispatch => {
   }
 
   try {
-    const res = await axios.get(`${DASHBOARD_API}/api/v1/planets?coordinates.galaxy=${galaxy}&coordinates.system=${system}&sort=coordinates.position`);
+    const res = await axios.get(`${DASHBOARD_API}/api/v1/planets?sort=coordinates.galaxy,coordinates.system,coordinates.position&coordinates.galaxy=${galaxy}&page=${system}`);
 
     dispatch({
       type: GET_PLANETS,
-      payload: res.data.data
+      payload: [res.data.data, galaxy, system]
     })
   } catch (err) {
     const errors = err.response.data.error.split(',');

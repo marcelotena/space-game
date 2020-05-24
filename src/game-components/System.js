@@ -1,19 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './System.css';
-import { generatePlanet } from './helpers/planet';
 import Planet from "./Planet";
+import store from "../store";
+import { connect } from 'react-redux';
+import { getPlanets } from "../actions/planets";
 
-const System = () => {
+const System = ({ planets, navigation }) => {
 
-  const system = {
-    galaxy: 2,
-    position: 127
-  };
-
-  const planets = [];
-  for(let i=1; i<=15; i++ ) {
-    planets[i] = generatePlanet(i);
-  }
+  useEffect(() => {
+    store.dispatch(getPlanets(1, 2));
+  }, []);
 
   return (
       <div className="system-list-container">
@@ -30,14 +26,14 @@ const System = () => {
               </div>
 
               <div className="ui pagination menu">
-                <a className="item">
-                  {system.galaxy - 1}
+                <a className={`${navigation.galaxy > 1 ? '' : 'active'} item`}>
+                  {navigation.galaxy > 1 ? navigation.galaxy - 1 : 1}
                 </a>
-                <a className="active item">
-                  {system.galaxy}
+                <a className={`${navigation.galaxy > 1 ? 'active' : ''} item`}>
+                  {navigation.galaxy > 1 ? navigation.galaxy : 2}
                 </a>
                 <a className="item">
-                  {system.galaxy + 1}
+                  {navigation.galaxy > 1 ? navigation.galaxy + 1 : 3}
                 </a>
               </div>
             </div>
@@ -59,20 +55,14 @@ const System = () => {
               </div>
 
               <div className="ui pagination menu">
-                <a className="item">
-                  {system.position - 2}
+                <a className={`${navigation.system > 1 ? '' : 'active'} item`}>
+                  {navigation.system > 1 ? navigation.system - 1 : 1}
+                </a>
+                <a className={`${navigation.system > 1 ? 'active' : ''} item`}>
+                  {navigation.system > 1 ? navigation.system : 2}
                 </a>
                 <a className="item">
-                  {system.position - 1}
-                </a>
-                <a className="active item">
-                  {system.position}
-                </a>
-                <a className="item">
-                  {system.position + 1}
-                </a>
-                <a className="item">
-                  {system.position + 2}
+                  {navigation.system > 1 ? navigation.system + 1 : 3}
                 </a>
               </div>
             </div>
@@ -92,7 +82,7 @@ const System = () => {
             <div className="planet-alliance-header">Alliance</div>
           </li>
           {planets.map(planet =>
-              <li className="system-list-item" key={planet.id}>
+              <li className="system-list-item" key={planet._id}>
                 <Planet planet={planet} />
               </li>
           )}
@@ -123,4 +113,9 @@ const System = () => {
   );
 };
 
-export default System;
+const mapStateToProps = state => ({
+  planets: state.planets.planets,
+  navigation: state.planets.navigation
+});
+
+export default connect(mapStateToProps)(System);
