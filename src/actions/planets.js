@@ -20,7 +20,7 @@ export const getPlanets = (galaxy, system) => async dispatch => {
 
     dispatch({
       type: GET_PLANETS,
-      payload: [res.data.data, galaxy, system]
+      payload: [res.data, galaxy, system]
     })
   } catch (err) {
     const errors = err.response.data.error.split(',');

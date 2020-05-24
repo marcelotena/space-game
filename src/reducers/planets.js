@@ -7,7 +7,8 @@ const initialState = {
   planets: [],
   navigation: {
     galaxy: 1,
-    system: 1
+    system: 1,
+    arrows: {}
   },
   loading: true,
 };
@@ -20,8 +21,9 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        planets: payload[0],
+        planets: payload[0].data,
         navigation: {
+          arrows: payload[0].pagination,
           galaxy: payload[1],
           system: payload[2]
         }

@@ -13,15 +13,24 @@ const Navigation = ({ title, navigation, item }) => {
           </div>
 
           <div className="ui pagination menu">
-            <a className={`${navigation[item] > 1 ? '' : 'active'} item`}>
-              {parseInt(navigation[item]) > 1 ? parseInt(navigation[item]) - 1 : 1}
+            {navigation.arrows.prev ?
+                <a className={`${navigation[item] > 1 ? '' : 'active'} item`}>
+                  {parseInt(navigation[item]) - 1}
+                </a> :
+                ''
+            }
+
+            <a className="active item">
+              {parseInt(navigation[item])}
             </a>
-            <a className={`${navigation[item] > 1 ? 'active' : ''} item`}>
-              {parseInt(navigation[item]) > 1 ? parseInt(navigation[item]) : 2}
-            </a>
-            <a className="item">
-              {parseInt(navigation[item]) > 1 ? parseInt(navigation[item]) + 1 : 3}
-            </a>
+
+            {navigation.arrows.next ?
+                <a className="item">
+                  {parseInt(navigation[item]) + 1}
+                </a> :
+                ''
+            }
+
           </div>
         </div>
 
