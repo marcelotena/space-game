@@ -35,3 +35,9 @@ export const getPlanets = (galaxy, system) => async dispatch => {
   }
 
 };
+
+export const navigateTo = destination => dispatch => {
+  dispatch({
+    type: destination
+  });
+};
