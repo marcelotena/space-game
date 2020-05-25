@@ -1,0 +1,8 @@
+.ui.form .field>label {
+    text-align: left;
+    margin-left: 5px;
+}
+
+.ui.form .checkbox {
+    margin-top: 18px;
+}

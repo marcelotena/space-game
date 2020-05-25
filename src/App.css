@@ -28,3 +28,9 @@
 .sidebars-and-content {
   display: flex;
 }
+
+.ui.inverted.segment {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
