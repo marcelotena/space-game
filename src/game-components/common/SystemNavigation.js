@@ -6,7 +6,7 @@ import store from "../../store";
 import { getPlanets, navigateTo } from "../../actions/planets";
 import {PREVIOUS_SYSTEM, NEXT_SYSTEM } from "../../actions/types";
 
-const SystemNavigation = ({ title, navigation }) => {
+const SystemNavigation = ({ title, navigation, navigateTo }) => {
 
   const handleNavigation = destination => {
     navigateTo(destination);
@@ -35,20 +35,29 @@ const SystemNavigation = ({ title, navigation }) => {
           <div className="ui pagination menu">
             {parseInt(navigation.system) - 1 >= 1 ?
                 <a className="item" onClick={() => jumpToSystem(parseInt(navigation.system) - 1)}>
-                  {parseInt(navigation.system) - 1}
+                  {parseInt(navigation.system) === TOTAL_SYSTEMS ? parseInt(navigation.system) - 2 : parseInt(navigation.system) - 1}
                 </a> :
-                ''
+                <a className="active item" onClick={() => jumpToSystem(parseInt(navigation.system))}>
+                  {parseInt(navigation.system)}
+                </a>
             }
 
-            <a className={`active item`} onClick={() => jumpToSystem(parseInt(navigation.system))}>
-              {parseInt(navigation.system)}
-            </a>
+            {parseInt(navigation.system) !== 1 ?
+                <a className={`${parseInt(navigation.system) !== TOTAL_SYSTEMS ? 'active' : ''} item`} onClick={() => jumpToSystem(parseInt(navigation.system) - 1)}>
+                  {parseInt(navigation.system) === TOTAL_SYSTEMS ? parseInt(navigation.system) - 1 : parseInt(navigation.system)}
+                </a> :
+                <a className="item" onClick={() => jumpToSystem(parseInt(navigation.system))}>
+                  {parseInt(navigation.system) + 1}
+                </a>
+            }
 
             {parseInt(navigation.system) + 1 <= TOTAL_SYSTEMS ?
                 <a className="item" onClick={() => jumpToSystem(parseInt(navigation.system) + 1)}>
-                  {parseInt(navigation.system) + 1}
+                  {parseInt(navigation.system) === 1 ? parseInt(navigation.system) + 2 : parseInt(navigation.system) + 1}
                 </a> :
-                ''
+                <a className="active item">
+                  {parseInt(navigation.system)}
+                </a>
             }
 
           </div>
