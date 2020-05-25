@@ -9,8 +9,8 @@ import { getPlanets } from "../actions/planets";
 
 const System = ({ planets, navigation }) => {
   const [ warpForm, setWarpFormData ] = useState({
-    galaxyToWarp: 1,
-    systemToWarp: 3
+    galaxyToWarp: '',
+    systemToWarp: ''
   });
 
   const { galaxyToWarp, systemToWarp} = warpForm;

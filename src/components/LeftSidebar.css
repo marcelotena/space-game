@@ -1,0 +1,36 @@
+.App-left-sidebar .ui.vertical.menu {
+    background: none;
+    border: 1px solid rgba(42,61,76,1.0);
+    vertical-align: top;
+    width: 100%;
+    margin: 30px 30px;
+
+    position:relative;
+    box-shadow:0 5px 12px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.1) inset;
+}
+
+.App-left-sidebar .ui.vertical.menu .item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: rgba(0,12,28,1.0);
+    border-bottom: 1px solid rgba(42,61,76,0.5);
+    color: white;
+    transition: background 0.3s ease-in-out;
+    font-weight: 700;
+}
+
+.App-left-sidebar .ui.vertical.menu .item:hover {
+    background: rgba(32,48,64,1.0);
+    color: white;
+}
+
+.App-left-sidebar .ui.vertical.menu .item.active {
+    background: rgba(32,48,64,1.0);
+}
+
+.system-list-navigation .ui.pagination.menu .item.disabled {
+    background: rgba(255,255,255,0.2)!important;
+    color: rgba(255, 255, 255, 0.3)!important;
+    cursor: not-allowed!important;
+}
+

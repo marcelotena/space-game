@@ -85,6 +85,7 @@
     border-right: 1px solid rgba(42,61,76,0.5);
     color: white;
     transition: background 0.3s ease-in-out;
+    font-weight: 700;
 }
 
 .system-list-navigation .ui.pagination.menu .item.disabled {
