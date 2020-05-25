@@ -1,6 +1,7 @@
 import React from 'react';
+import { TOTAL_SYSTEMS } from "../../utils/constants";
 
-const Navigation = ({ title, navigation, item }) => {
+const SystemNavigation = ({ title, navigation }) => {
   return (
       <div className="system-list-navigation galaxy-navigation">
         <button className="ui icon button">
@@ -13,20 +14,20 @@ const Navigation = ({ title, navigation, item }) => {
           </div>
 
           <div className="ui pagination menu">
-            {navigation.arrows.prev ?
-                <a className={`${navigation[item] > 1 ? '' : 'active'} item`}>
-                  {parseInt(navigation[item]) - 1}
+            {parseInt(navigation.system) - 1 >= 1 ?
+                <a className="item">
+                  {parseInt(navigation.system) - 1}
                 </a> :
                 ''
             }
 
-            <a className="active item">
-              {parseInt(navigation[item])}
+            <a className={`active item`}>
+              {parseInt(navigation.system)}
             </a>
 
-            {navigation.arrows.next ?
+            {parseInt(navigation.system) + 1 <= TOTAL_SYSTEMS ?
                 <a className="item">
-                  {parseInt(navigation[item]) + 1}
+                  {parseInt(navigation.system) + 1}
                 </a> :
                 ''
             }
@@ -42,4 +43,4 @@ const Navigation = ({ title, navigation, item }) => {
   );
 };
 
-export default Navigation;
+export default SystemNavigation;

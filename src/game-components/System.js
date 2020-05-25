@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './System.css';
 import Planet from "./Planet";
-import Navigation from "./common/Navigation";
+import GalaxyNavigation from './common/GalaxyNavigation';
+import SystemNavigation from "./common/SystemNavigation";
 import store from "../store";
 import { connect } from 'react-redux';
 import { getPlanets } from "../actions/planets";
@@ -32,9 +33,9 @@ const System = ({ planets, navigation }) => {
 
         <div className="system-navigation">
 
-          <Navigation navigation={navigation} title="Galaxy" item="galaxy"/>
+          <GalaxyNavigation navigation={navigation} title="Galaxy" />
 
-          <Navigation navigation={navigation} title="System" item="system"/>
+          <SystemNavigation navigation={navigation} title="System" />
 
         </div>
 
