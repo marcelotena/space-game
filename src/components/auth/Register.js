@@ -18,7 +18,7 @@ const Register = () => {
   };
 
   return (
-      <div>
+      <div className="Register">
         <h1>Register</h1>
 
         <div className="ui inverted segment">
