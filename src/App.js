@@ -23,9 +23,11 @@ function App() {
               <LeftSidebar />
 
               <div className="App-content">
-                <Route exact path="/galaxy" component={Galaxy} />
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/login" component={Login} />
+                <Switch>
+                  <Route exact path="/galaxy" component={Galaxy} />
+                  <Route exact path="/register" component={Register} />
+                  <Route exact path="/login" component={Login} />
+                </Switch>
               </div>
 
               <RightSidebar />

@@ -12,9 +12,9 @@ const GalaxyNavigation = ({ title, navigation, navigateTo }) => {
   const renderItems = () => {
     for(let i = 1; i <= TOTAL_GALAXIES; i++) {
       items.push(
-          <a className={`${parseInt(navigation.galaxy) === i ? 'active' : ''} item`} key={i} onClick={() => jumpToGalaxy(i)}>
+          <button className={`${parseInt(navigation.galaxy) === i ? 'active' : ''} item`} key={i} onClick={() => jumpToGalaxy(i)}>
             {i}
-          </a>
+          </button>
       );
     }
 

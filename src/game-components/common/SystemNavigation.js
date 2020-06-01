@@ -34,30 +34,30 @@ const SystemNavigation = ({ title, navigation, navigateTo }) => {
 
           <div className="ui pagination menu">
             {parseInt(navigation.system) - 1 >= 1 ?
-                <a className="item" onClick={() => jumpToSystem(parseInt(navigation.system) - 1)}>
+                <button className="item" onClick={() => jumpToSystem(parseInt(navigation.system) - 1)}>
                   {parseInt(navigation.system) === TOTAL_SYSTEMS ? parseInt(navigation.system) - 2 : parseInt(navigation.system) - 1}
-                </a> :
-                <a className="active item" onClick={() => jumpToSystem(parseInt(navigation.system))}>
+                </button> :
+                <button className="active item" onClick={() => jumpToSystem(parseInt(navigation.system))}>
                   {parseInt(navigation.system)}
-                </a>
+                </button>
             }
 
             {parseInt(navigation.system) !== 1 ?
-                <a className={`${parseInt(navigation.system) !== TOTAL_SYSTEMS ? 'active' : ''} item`} onClick={() => jumpToSystem(parseInt(navigation.system) - 1)}>
+                <button className={`${parseInt(navigation.system) !== TOTAL_SYSTEMS ? 'active' : ''} item`} onClick={() => jumpToSystem(parseInt(navigation.system) - 1)}>
                   {parseInt(navigation.system) === TOTAL_SYSTEMS ? parseInt(navigation.system) - 1 : parseInt(navigation.system)}
-                </a> :
-                <a className="item" onClick={() => jumpToSystem(parseInt(navigation.system))}>
+                </button> :
+                <button className="item" onClick={() => jumpToSystem(parseInt(navigation.system))}>
                   {parseInt(navigation.system) + 1}
-                </a>
+                </button>
             }
 
             {parseInt(navigation.system) + 1 <= TOTAL_SYSTEMS ?
-                <a className="item" onClick={() => jumpToSystem(parseInt(navigation.system) + 1)}>
+                <button className="item" onClick={() => jumpToSystem(parseInt(navigation.system) + 1)}>
                   {parseInt(navigation.system) === 1 ? parseInt(navigation.system) + 2 : parseInt(navigation.system) + 1}
-                </a> :
-                <a className="active item">
+                </button> :
+                <button className="active item">
                   {parseInt(navigation.system)}
-                </a>
+                </button>
             }
 
           </div>

@@ -82,10 +82,21 @@
     padding-top: 3px;
     padding-bottom: 3px;
     background: rgba(0,12,28,1.0);
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
     border-right: 1px solid rgba(42,61,76,0.5);
     color: white;
     transition: background 0.3s ease-in-out;
     font-weight: 700;
+}
+
+.system-list-navigation .ui.pagination.menu .item:last-child {
+    border-right: none;
+}
+
+.system-list-navigation .ui.pagination.menu .item:focus {
+    outline: none;
 }
 
 .system-list-navigation .ui.pagination.menu .item.disabled {
@@ -112,6 +123,7 @@
 .system-list-navigation .ui.icon.button:hover,
 .system-list-navigation .ui.pagination.menu .item:hover {
     background: rgba(32,48,64,1.0);
+    cursor: pointer;
 }
 
 .ui.disabled.button {

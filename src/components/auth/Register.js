@@ -13,6 +13,9 @@ const Register = () => {
 
   const { name, email, password1, password2, conditions } = formData;
 
+  const onChange = e =>
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+
   const handleSubmit = e => {
     // TODO: Register user/player function
   };
@@ -29,7 +32,9 @@ const Register = () => {
                 <input
                     type="text"
                     placeholder="Username"
+                    name="name"
                     value={name}
+                    onChange={(e) => onChange(e)}
                     required
                 />
               </div>
@@ -39,7 +44,9 @@ const Register = () => {
                 <input
                     type="text"
                     placeholder="Email"
+                    name="email"
                     value={email}
+                    onChange={(e) => onChange(e)}
                     required
                 />
               </div>
@@ -51,7 +58,9 @@ const Register = () => {
                 <input
                     type="password"
                     placeholder="Password"
+                    name="password1"
                     value={password1}
+                    onChange={(e) => onChange(e)}
                     required
                 />
               </div>
@@ -61,7 +70,9 @@ const Register = () => {
                 <input
                     type="password"
                     placeholder="Confirm password"
+                    name="password2"
                     value={password2}
+                    onChange={(e) => onChange(e)}
                     required
                 />
               </div>
@@ -70,7 +81,9 @@ const Register = () => {
             <div className="fields">
               <div className="field">
                 <Checkbox
+                    name="conditions"
                     value={conditions}
+                    onChange={(e) => onChange(e)}
                     label="I agree to the terms and conditions"
                 />
               </div>
