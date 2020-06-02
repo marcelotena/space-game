@@ -17,6 +17,9 @@ const LeftSidebar = () => {
           <Link to='/galaxy' className={`${location.pathname === '/galaxy' ? 'active' : ''} item`}>
             Galaxy
           </Link>
+          <Link to='/chat' className={`${location.pathname === '/chat' ? 'active' : ''} item`}>
+            Chat
+          </Link>
         </div>
       </div>
   );

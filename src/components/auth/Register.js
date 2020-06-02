@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import './Register.css';
 import { Checkbox } from 'semantic-ui-react'
+// Redux
+import { connect } from 'react-redux';
+import { register } from "../../actions/auth";
 
-const Register = () => {
+const Register = ({ register }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,8 +19,22 @@ const Register = () => {
   const onChange = e =>
       setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const toggleCheckbox = () => {
+    setFormData({ ...formData, conditions: !formData.conditions });
+  };
+
   const handleSubmit = e => {
-    // TODO: Register user/player function
+    e.preventDefault();
+
+    if(password1 !== password2) {
+      // setAlert('Passwords do not match', 'error');
+    } else {
+      if (conditions) {
+        register({ name, email, password: password1 });
+      } else {
+        // conditions are not accepted
+      }
+    }
   };
 
   return (
@@ -82,8 +99,7 @@ const Register = () => {
               <div className="field">
                 <Checkbox
                     name="conditions"
-                    value={conditions}
-                    onChange={(e) => onChange(e)}
+                    onChange={toggleCheckbox}
                     label="I agree to the terms and conditions"
                 />
               </div>
@@ -101,4 +117,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default connect(null, { register })(Register);

@@ -16,7 +16,7 @@ const System = ({ planets, navigation }) => {
   const { galaxyToWarp, systemToWarp} = warpForm;
 
   useEffect(() => {
-    store.dispatch(getPlanets(1, 3));
+    store.dispatch(getPlanets(1, 10));
   }, []);
 
   const onChange = e =>

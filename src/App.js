@@ -7,6 +7,7 @@ import RightSidebar from "./components/RightSidebar";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Galaxy from "./game-components/Galaxy";
+import Chat from "./components/Chat";
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
@@ -27,6 +28,7 @@ function App() {
                   <Route exact path="/galaxy" component={Galaxy} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
+                  <Route exact path="/chat" component={Chat} />
                 </Switch>
               </div>
 
